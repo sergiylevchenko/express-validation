@@ -20,6 +20,9 @@ interface schema {
   cookies?: object;
   signedCookies?: object;
   body?: object;
+  client?: string;
+  decodedToken?: object;
+  test?: object;
 }
 
 interface errors {
