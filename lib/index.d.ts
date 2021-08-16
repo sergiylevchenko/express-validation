@@ -31,6 +31,8 @@ interface errors {
   cookies?: JoiError[];
   signedCookies?: JoiError[];
   body?: JoiError[];
+  client?: JoiError[];
+  decodedToken?: JoiError[];
 }
 
 export declare const Joi: joiRoot;
