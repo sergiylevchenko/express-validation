@@ -14,30 +14,16 @@ interface EvOptions {
 }
 
 interface schema {
-  params?: object;
-  headers?: object;
-  query?: object;
-  cookies?: object;
-  signedCookies?: object;
-  body?: object;
-  client?: string;
-  decodedToken?: object;
+  [propName: string]: object | string;
 }
 
 interface errors {
-  params?: JoiError[];
-  headers?: JoiError[];
-  query?: JoiError[];
-  cookies?: JoiError[];
-  signedCookies?: JoiError[];
-  body?: JoiError[];
-  client?: JoiError[];
-  decodedToken?: JoiError[];
+  [propName: string]: JoiError[];
 }
 
 export declare const Joi: joiRoot;
 
-export declare function validate(schema: schema, options?: EvOptions, joiRoot?: ValidationOptions): RequestHandler;
+export declare function validate(schema: schema, options?: EvOptions, joiRoot?: ValidationOptions, parameters?: string[]): RequestHandler;
 
 export class ValidationError {
   name: string;
